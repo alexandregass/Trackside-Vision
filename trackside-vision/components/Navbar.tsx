@@ -1,8 +1,31 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
+  const [lang, setLang] = useState("fr");
+
+  const content = {
+    fr: {
+      home: "Accueil",
+      engineering: "Ingénierie",
+      simracing: "Simracing",
+      projects: "Projets",
+      contact: "Contact",
+    },
+    en: {
+      home: "Home",
+      engineering: "Engineering",
+      simracing: "Simracing",
+      projects: "Projects",
+      contact: "Contact",
+    },
+  };
+
+  const t = content[lang as "fr" | "en"];
+
   return (
     <nav
       style={{
@@ -14,31 +37,19 @@ export default function Navbar() {
         alignItems: "center",
       }}
     >
-      {/* Logo / Name */}
-      <div style={{ fontWeight: "bold", fontSize: "18px" }}>
+      <div style={{ fontWeight: "bold" }}>
         Trackside Vision
       </div>
 
-      {/* Navigation */}
       <div style={{ display: "flex", gap: "20px" }}>
-        <Link href="/">Home</Link>
-
-        <Link href="/engineering">
-          Engineering
-        </Link>
-
-        <Link href="/simracing">
-          Simracing
-        </Link>
-
-        <Link href="/projects">
-          Projects
-        </Link>
-
-        <Link href="/contact">
-          Contact
-        </Link>
+        <Link href="/">{t.home}</Link>
+        <Link href="/engineering">{t.engineering}</Link>
+        <Link href="/simracing">{t.simracing}</Link>
+        <Link href="/projects">{t.projects}</Link>
+        <Link href="/contact">{t.contact}</Link>
       </div>
+
+      <LanguageSwitcher lang={lang} setLang={setLang} />
     </nav>
   );
 }
