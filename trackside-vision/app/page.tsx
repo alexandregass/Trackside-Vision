@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 type Lang = "fr" | "en";
+
 
 export default function TracksideVisionSite() {
   const [lang, setLang] = React.useState<Lang>("fr");
