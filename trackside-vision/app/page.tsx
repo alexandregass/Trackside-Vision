@@ -1,197 +1,116 @@
-"use client";
-
-
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-
-type Lang = "fr" | "en";
-
-
-export default function TracksideVisionSite() {
-  const [lang, setLang] = React.useState<Lang>("fr");
-  const [page, setPage] = React.useState("home");
-
-  const content = {
-    fr: {
-      nav: {
-        home: "Accueil",
-        engineering: "Engineering",
-        simracing: "Simracing",
-        projects: "Projets",
-        contact: "Contact"
-      },
-      heroTitle: "Trackside Vision",
-      heroSubtitle: "Ingénierie de performance pour le sport automobile",
-      engineeringTitle: "Services d’ingénierie",
-      engineeringText:
-        "Support en ingénierie de course pour pilotes et équipes en GT et endurance : analyse de données, stratégie, optimisation performance et coaching.",
-      simTitle: "Division Simracing",
-      simText:
-        "Développement d’une activité simracing basée sur des méthodes d’ingénierie issues du sport automobile réel.",
-      projectsTitle: "Projets & Études de cas",
-      projectsText:
-        "Analyses de performance, optimisation de stratégie, amélioration de la constance et développement pilote.",
-      contactTitle: "Contact",
-      contactText:
-        "Disponible pour missions freelance en France et à l’international."
-    },
-    en: {
-      nav: {
-        home: "Home",
-        engineering: "Engineering",
-        simracing: "Simracing",
-        projects: "Projects",
-        contact: "Contact"
-      },
-      heroTitle: "Trackside Vision",
-      heroSubtitle: "Performance engineering for motorsport",
-      engineeringTitle: "Engineering Services",
-      engineeringText:
-        "Race engineering support for drivers and teams in GT and endurance racing: data analysis, strategy, performance optimisation and coaching.",
-      simTitle: "Simracing Division",
-      simText:
-        "Development of a simracing activity based on real-world motorsport engineering methods.",
-      projectsTitle: "Projects & Case Studies",
-      projectsText:
-        "Performance analysis, strategy optimisation, consistency improvement and driver development.",
-      contactTitle: "Contact",
-      contactText:
-        "Available for freelance missions in France and internationally."
-    }
-  };
-
-  const renderPage = () => {
-    switch (page) {
-      case "engineering":
-        return (
-          <Card className="max-w-4xl mx-auto">
-            <CardContent className="p-6">
-              <h1 className="text-2xl font-bold">
-                {content[lang].engineeringTitle}
-              </h1>
-              <p className="mt-4 text-gray-400">
-                {content[lang].engineeringText}
-              </p>
-            </CardContent>
-          </Card>
-        );
-
-      case "simracing":
-        return (
-          <Card className="max-w-4xl mx-auto">
-            <CardContent className="p-6">
-              <h1 className="text-2xl font-bold">
-                {content[lang].simTitle}
-              </h1>
-              <p className="mt-4 text-gray-400">
-                {content[lang].simText}
-              </p>
-            </CardContent>
-          </Card>
-        );
-
-      case "projects":
-        return (
-          <Card className="max-w-4xl mx-auto">
-            <CardContent className="p-6">
-              <h1 className="text-2xl font-bold">
-                {content[lang].projectsTitle}
-              </h1>
-              <p className="mt-4 text-gray-400">
-                {content[lang].projectsText}
-              </p>
-            </CardContent>
-          </Card>
-        );
-
-      case "contact":
-        return (
-          <Card className="max-w-2xl mx-auto">
-            <CardContent className="p-6 space-y-4">
-              <h1 className="text-2xl font-bold">
-                {content[lang].contactTitle}
-              </h1>
-              <p className="text-gray-400">
-                {content[lang].contactText}
-              </p>
-              <input
-                className="w-full p-3 bg-zinc-800 rounded"
-                placeholder="Nom / Name"
-              />
-              <input
-                className="w-full p-3 bg-zinc-800 rounded"
-                placeholder="Email"
-              />
-              <textarea
-                className="w-full p-3 bg-zinc-800 rounded"
-                placeholder="Message"
-              />
-              <Button className="w-full">Envoyer / Send</Button>
-            </CardContent>
-          </Card>
-        );
-
-      default:
-        return (
-          <div className="text-center max-w-3xl mx-auto">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl font-bold"
-            >
-              {content[lang].heroTitle}
-            </motion.h1>
-            <p className="mt-4 text-lg text-gray-300">
-              {content[lang].heroSubtitle}
-            </p>
-          </div>
-        );
-    }
-  };
-
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Navbar */}
-      <div className="flex justify-between items-center px-6 py-4 border-b border-zinc-800">
-        <div className="font-bold text-lg">Trackside Vision</div>
+    <main
+      style={{
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      {/* HERO */}
+      <section
+        style={{
+          height: "80vh",
+          background: "#111",
+          color: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          padding: "20px",
+        }}
+      >
+        <div>
+          <h1
+            style={{
+              fontSize: "48px",
+              marginBottom: "20px",
+            }}
+          >
+            Trackside Vision
+          </h1>
 
-        <div className="flex gap-4">
-          {Object.entries(content[lang].nav).map(([key, label]) => (
-            <button
-              key={key}
-              onClick={() => setPage(key)}
-              className="hover:text-gray-300"
+          <h2
+            style={{
+              fontSize: "28px",
+              fontWeight: "normal",
+              marginBottom: "20px",
+            }}
+          >
+            Race Engineering & Performance
+          </h2>
+
+          <p
+            style={{
+              fontSize: "18px",
+              maxWidth: "600px",
+              margin: "auto",
+              marginBottom: "30px",
+              color: "#ccc",
+            }}
+          >
+            Freelance race engineer focused on GT and endurance racing,
+            delivering data-driven performance and structured race support.
+          </p>
+
+          <div
+            style={{
+              display: "flex",
+              gap: "20px",
+              justifyContent: "center",
+            }}
+          >
+            <a
+              href="/engineering"
+              style={{
+                padding: "12px 24px",
+                background: "white",
+                color: "black",
+                textDecoration: "none",
+                borderRadius: "6px",
+                fontWeight: "bold",
+              }}
             >
-              {label}
-            </button>
-          ))}
+              View Services
+            </a>
+
+            <a
+              href="/contact"
+              style={{
+                padding: "12px 24px",
+                border: "1px solid white",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "6px",
+              }}
+            >
+              Contact
+            </a>
+          </div>
         </div>
+      </section>
 
-        <div className="flex gap-2">
-          <button
-            onClick={() => setLang("fr")}
-            className="px-3 py-1 bg-zinc-800 rounded"
-          >
-            FR
-          </button>
-          <button
-            onClick={() => setLang("en")}
-            className="px-3 py-1 bg-zinc-800 rounded"
-          >
-            EN
-          </button>
-        </div>
-      </div>
+      {/* QUICK OVERVIEW */}
+      <section
+        style={{
+          padding: "60px 20px",
+          maxWidth: "1000px",
+          margin: "auto",
+          textAlign: "center",
+        }}
+      >
+        <h2 style={{ marginBottom: "20px" }}>
+          Engineering Services
+        </h2>
 
-      {/* Content */}
-      <div className="py-20 px-6">{renderPage()}</div>
-
-      {/* Footer */}
-      <div className="text-center py-6 text-gray-500 text-sm border-t border-zinc-800">
-        © {new Date().getFullYear()} Trackside Vision
-      </div>
-    </div>
+        <p
+          style={{
+            fontSize: "18px",
+            color: "#555",
+          }}
+        >
+          Data analysis, race strategy, driver support and performance
+          optimization for professional motorsport teams and drivers.
+        </p>
+      </section>
+    </main>
   );
 }
