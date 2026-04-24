@@ -1,12 +1,7 @@
 export default function EngineeringPage() {
   return (
     <main
-      style={{
-        padding: "60px 20px",
-        maxWidth: "1100px",
-        margin: "auto",
-        fontFamily: "Arial, sans-serif",
-      }}
+        className="container"
     >
       {/* HERO */}
 
@@ -81,12 +76,7 @@ export default function EngineeringPage() {
           ].map((service, index) => (
             <div
               key={index}
-              style={{
-                padding: "25px",
-                border: "1px solid #ddd",
-                borderRadius: "10px",
-                background: "#f9f9f9",
-              }}
+              className="section-light"
             >
               <h3
                 style={{
