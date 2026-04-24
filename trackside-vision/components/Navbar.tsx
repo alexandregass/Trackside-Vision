@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "./LanguageContext";
 
 export default function Navbar() {
-  const [lang, setLang] = useState("fr");
+  const { lang, setLang } = useLanguage();
 
   const content = {
     fr: {
