@@ -1,8 +1,10 @@
 "use client";
+import { useLanguage } from "./LanguageContext";
+type Language = "fr" | "en";
 
 type Props = {
-  lang: string;
-  setLang: (lang: string) => void;
+  lang: Language;
+  setLang: (lang: Language) => void;
 };
 
 export default function LanguageSwitcher({ lang, setLang }: Props) {
