@@ -1,9 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "./LanguageContext";
+type Language = "fr" | "en";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const { lang, setLang } = useLanguage();
@@ -39,7 +41,15 @@ export default function Navbar() {
       }}
     >
       <div style={{ fontWeight: "bold" }}>
-        Trackside Vision
+        <Link href="/" style={{ display: "flex", alignItems: "center" }}>
+          <Image
+            src="/Images/logo-trackside.png"
+            alt="Trackside Vision logo"
+            width={180}
+            height={180}
+            priority
+          />
+        </Link>
       </div>
 
       <div style={{ display: "flex", gap: "20px" }}>

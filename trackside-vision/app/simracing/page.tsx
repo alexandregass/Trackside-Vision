@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function SimracingPage() {
   return (
     <main
@@ -22,7 +24,16 @@ export default function SimracingPage() {
             marginBottom: "20px",
           }}
         >
-          Simracing
+          <Image
+            src="/Images/logo-simracing.png"
+            alt="Simracing team logo"
+            width={250}
+            height={250}
+            style={{
+              marginTop: "20px",
+              marginBottom: "20px",
+            }}
+          />
         </h1>
 
         <p
