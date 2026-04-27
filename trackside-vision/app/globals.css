@@ -96,3 +96,44 @@ p {
   padding: 30px;
   border-radius: 10px;
 }
+
+/* NAVBAR */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0px 0px;
+  padding-left: 200px;
+  padding-right: 200px;
+
+  border-bottom: 1px solid #ddd;
+
+  background: rgb(0, 0, 0);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+}
+
+/* NAV LINKS */
+
+.nav-links {
+  display: flex;
+  gap: 80px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+}

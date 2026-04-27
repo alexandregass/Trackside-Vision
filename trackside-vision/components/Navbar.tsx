@@ -29,38 +29,55 @@ export default function Navbar() {
 
   const t = content[lang as "fr" | "en"];
 
+
   return (
     <nav
-      style={{
+      className="navbar"
+      /*style={{
         padding: "20px 40px",
         background: "#111",
         color: "white",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-      }}
+      }}*/
     >
       <div style={{ fontWeight: "bold" }}>
         <Link href="/" style={{ display: "flex", alignItems: "center" }}>
           <Image
             src="/Images/logo-trackside.png"
             alt="Trackside Vision logo"
-            width={180}
-            height={180}
+            width={113.1}
+            height={90}
             priority
           />
         </Link>
       </div>
 
-      <div style={{ display: "flex", gap: "20px" }}>
-        <Link href="/">{t.home}</Link>
-        <Link href="/engineering">{t.engineering}</Link>
-        <Link href="/simracing">{t.simracing}</Link>
-        <Link href="/projects">{t.projects}</Link>
-        <Link href="/contact">{t.contact}</Link>
+      <div className="nav-links">
+        <a href="/">
+          {content[lang].home}
+        </a>
+
+        <a href="/engineering">
+          {content[lang].engineering}
+        </a>
+
+        <a href="/simracing">
+          {content[lang].simracing}
+        </a>
+
+        <a href="/projects">
+          {content[lang].projects}
+        </a>
+
+        <a href="/contact">
+          {content[lang].contact}
+        </a>
       </div>
 
       <LanguageSwitcher lang={lang} setLang={setLang} />
     </nav>
+
   );
 }

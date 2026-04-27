@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer
@@ -26,6 +29,18 @@ export default function Footer() {
       <p style={{ marginTop: "20px", fontSize: "14px", opacity: 0.7 }}>
         © {new Date().getFullYear()} Trackside Vision
       </p>
+      <div style={{ fontWeight: "bold" }}>
+              <Link href="/" style={{ display: "flex", alignItems: "center" }}>
+                <Image
+                  src="/Images/logo-trackside.png"
+                  alt="Trackside Vision logo"
+                  width={1131/6}
+                  height={766/6}
+                  priority
+                />
+              </Link>
+        </div>
+
     </footer>
   );
 }
