@@ -8,7 +8,7 @@ export default function HomePage() {
     const content = {
     en: {
       heroTitle: "Trackside Vision",
-      heroSubtitle: "Race Engineering & Performance",
+      heroSubtitle: "Race Engineering & Strategy",
 
       heroText:
         "Freelance race engineer focused on GT and endurance racing, delivering data-driven performance and structured race support.",
@@ -46,13 +46,13 @@ export default function HomePage() {
 
     fr: {
       heroTitle: "Trackside Vision",
-      heroSubtitle: "Ingénierie de Course & Performance",
+      heroSubtitle: "Ingénierie de Course & Stratégie",
 
       heroText:
-        "Ingénieur de course freelance spécialisé en GT et endurance, avec une approche basée sur l'analyse de données et la performance.",
+        "Ingénieur de course freelance spécialisé en GT et en Endurance, avec une approche basée sur l'analyse de données, la performance et la stratégie de course.",
 
       metrics: [
-        { value: "50+", label: "Week-ends de course" },
+        { value: "30+", label: "Week-ends de course" },
         { value: "GT", label: "Spécialité Endurance" },
         { value: "FR / EU", label: "Support circuit" },
         { value: "Data", label: "Approche performance" },

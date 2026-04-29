@@ -7,8 +7,11 @@ type Language = "fr" | "en";
 import Link from "next/link";
 import Image from "next/image";
 
+
+
 export default function Navbar() {
   const { lang, setLang } = useLanguage();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const content = {
     fr: {
@@ -54,7 +57,7 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div className="nav-links">
+      <div className={`nav-links ${menuOpen ? "open" : ""}`}>
         <a href="/">
           {content[lang].home}
         </a>
@@ -76,6 +79,12 @@ export default function Navbar() {
         </a>
       </div>
 
+      <button
+        className="menu-button"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
+      </button>
       <LanguageSwitcher lang={lang} setLang={setLang} />
     </nav>
 
